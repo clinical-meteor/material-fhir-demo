@@ -1,5 +1,4 @@
 import React from 'react';
-import Hello from './Hello.jsx';
 import { HelloPatientCard } from 'material-fhir-ui';
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -10,7 +9,8 @@ const muiTheme = getMuiTheme({
   palette: {
     primary1Color: blue400,
     primary2Color: blue600,
-    pickerHeaderColor: blue600
+    pickerHeaderColor: blue600,
+    background: "#dddddd"
   }
 });
 
@@ -29,14 +29,18 @@ let JaneDoe = {
   contact: [{
     value: 'janedoe@symptomatic.io',
     system: 'email'
+  }],
+  identifier: [{
+    value: 'UC-47292018'
   }]
 }
 
 const App = () => (
-  <div style={{margin: '40px'}}>
+  <div style={{width: '100%', height: '100%', top: '0px', left: '0px', position: 'relative'}}>
     <MuiThemeProvider muiTheme={muiTheme}>
       <HelloPatientCard
         patient={JaneDoe}
+        style={{position: 'relative'}}
        />
     </MuiThemeProvider>  
   </div>

@@ -1,4 +1,7 @@
 body {
-  padding: 10px;
+  margin: 40px;
   font-family: sans-serif;
+}
+html {
+  background: "antiquewhite"
 }
