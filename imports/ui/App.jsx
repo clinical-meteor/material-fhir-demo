@@ -1,5 +1,8 @@
 import React from 'react';
-import { PatientCard, PatientTable } from 'material-fhir-ui';
+import { PatientCard, PatientTable, PatientDetail } from 'material-fhir-ui';
+
+import { RaisedButton } from 'material-ui';
+
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -58,10 +61,30 @@ let janeDoe = {
 
 let patients = [janeDoe]
 
+
+
+
 const App = () => (
   <div style={{width: '100%', height: '100%', top: '0px', left: '20px', padding: '40px', position: 'relative'}}>
     <MuiThemeProvider muiTheme={muiTheme}>
-      <PatientTable
+      <PatientDetail 
+        id="newPatientCard"
+        patient={janeDoe}
+        patientId="9ioLMPSkEmzNWtvra"
+        fhirVersion="R4"
+        onDelete={function(){ console.log("On Delete!")}}
+        onUpsert={function(){ console.log("On Upsert!")}}
+        onSave={function(){ console.log("On Save!")}}
+        onCancel={function(){ console.log("On Cancel!")}}
+        buttons={
+          <div>
+            <RaisedButton id='updatePatientButton' className='updatePatientButton' label="Save" primary={true} style={{marginRight: '20px'}} />
+            <RaisedButton id='deletePatientButton' label="Delete" />
+          </div>
+        }
+      />
+
+      {/* <PatientTable
         id="activePatientsTable"
         patients={patients}
         fhirVersion="R4"
@@ -81,7 +104,7 @@ const App = () => (
           alert('Patient ID: ' + get(patient, '_id'));      
         }}
         actionButtonLabel="Action!"
-       />
+       /> */}
     </MuiThemeProvider>  
   </div>
 );
