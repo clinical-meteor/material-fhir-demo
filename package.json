@@ -13,7 +13,7 @@
     "esm": "^3.2.25",
     "fhir-kit-client": "^1.4.0",
     "internal": "^1.0.8",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "lodash-es": "^4.17.11",
     "material-fhir-ui": "^0.6.11",
     "material-ui": "^0.20.1",
